@@ -14,6 +14,10 @@ class SnapshotArray:
         return self.snap_id - 1
 
     def get(self, index: int, snap_id: int) -> int:
+        """
+        Use binary search to speed up retrieval. Bi-sect can be used to be more
+        efficient.
+        """
         lh, rh, res = 0, len(self.array[index]) - 1, 0
         while lh <= rh:
             mid = (lh + rh) // 2
